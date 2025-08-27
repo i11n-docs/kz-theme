@@ -1,0 +1,24 @@
+
+{{ set current = parts.shift() }}
+{{# {{current}} - {{url}} #}}
+{{ for page of pages }}
+  <li>
+    {{# TODO: Add Icon based on page.data.type #}}
+    {{if !page.children }}
+      <a href="{{ page.data.url }}"{{if page.data.url === url}} aria-current{{ /if }}>
+        {{ include "includes/sidebar-icon.vto" { data: page.data} }}
+        {{ page.data.title }}
+      </a>
+    {{ else }}
+      <details{{if current === page.data.basename }} open{{/if}}>
+        <summary{{if page.data.url === url}} aria-current{{ /if }}>
+          <a href="{{ page.data.url }}">
+          {{ include "includes/sidebar-icon.vto" { data: page.data} }}
+          {{ page.data.title }}</a></summary>
+        <ul>
+          {{ include "includes/sidebar.vto" { pages: page.children, parts: parts } }}
+        </ul>
+      </details>
+    {{ /if }}
+  </li>
+{{ /for }}

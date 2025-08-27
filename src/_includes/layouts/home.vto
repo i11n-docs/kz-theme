@@ -1,0 +1,100 @@
+---
+date: Git Last Modified
+---
+<!doctype html>
+<html lang="{{ lang || metas.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title || metas.title }} - {{ metas.site }}</title>
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="canonical" href="{{ url |> url(true) }}">
+  </head>
+  <body>
+    <div>
+      <div class="drawer lg:drawer-open">
+        <input id="app-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <div>
+            <div class="flex gap-4 flex-1 px-4 pt-2 items-center">
+              <div class="lg:hidden">
+                <label for="app-drawer" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </label>  
+              </div>  
+              <a class="flex-1 text-xl lg:hidden">
+                <span class="text-primary">kod</span><span class="text-secondary">zutsumi</span>
+              </a>            
+              <div class="flex-1">
+                <label class="float-right btn btn-ghost" for="search_modal">
+                  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="2.5"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21-4.3-4.3"></path>
+                    </g>
+                  </svg>
+                </label>
+                <label class="toggle text-base-content">
+                  <input type="checkbox" value="light" class="theme-controller" />
+                  <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></g></svg>
+                  <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></g></svg>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="divider mt-0"></div>
+          <div class="mx-2 px-2 max-w-full">
+            <div class="breadcrumbs text-sm">
+              <ul>
+              {{ set crumbs = nav.breadcrumb(url)}}
+              {{ for i, page of crumbs }}
+                <li>
+                  <a href="{{ page.data.url }}">{{ page.data.title }}</a>
+                </li>
+              {{ /for }}
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-full">
+            {{ content }}
+          </div>
+        </div>
+        <div class="drawer-side">
+          <label for="app-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+          <ul class="menu bg-base-200 min-h-dvh w-80 p-4 sidebar-menu">          
+            <li class="flex gap-4 px-4 py-2">
+              <div>
+                <img
+                  class="h-8"
+                  src="https://docs.i11n.io/assets/img/logos/png/128/projects/kz/logo/stroked.v1.png"
+                  alt="kz" 
+                />
+                <a class="text-xl">
+                  <span class="text-primary">kod</span><span class="text-secondary">zutsumi</span>
+                </a>
+              </div>
+            </li>
+            {{ include "includes/sidebar.vto" { pages: nav.menu("/", "menu!=false").children, parts: url.split('/').slice(1) } }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <input type="checkbox" id="search_modal" class="modal-toggle" />
+    <div class="modal modal-top" role="dialog">
+      <div class="modal-box">
+        <h3>Search</h3>
+        <div id="search"></div>
+      </div>
+      <label class="modal-backdrop" for="search_modal">Close</label>
+    </div>
+  </body>
+</html>

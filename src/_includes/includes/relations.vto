@@ -1,0 +1,9 @@
+{{ if categories || category || tutorials || tutorial || howtos || howto || explanations || explanation || authors || author }}
+{{ include "relation.vto" { relation: howtos || howto, label: "How-to..." } }}
+{{ include "relation.vto" { relation: explanations || explanation, label: "Explain..." } }}
+{{ include "relation.vto" { relation: tutorials || tutorial, label: "Tutorials" } }}
+{{ include "relation.vto" { relation: categories || category, label: "Categories" } }}
+{{ include "relation.vto" { relation: authors || author, label: "Authors" } }}
+{{ else }}
+  <li class="menu-title text-info"><small>No related content</small></li>
+{{ /if }}

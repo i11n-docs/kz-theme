@@ -1,0 +1,22 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/deno-asdf:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "gruntfuggly.todo-tree",
+        "denoland.vscode-deno"
+      ],
+      "settings": {
+        "files.exclude": {
+          "**/CODE_OF_CONDUCT.md": true,
+          "**/CONTRIBUTING.md": true,
+          "**/LICENSE": true
+        }
+      }
+    }
+  }
+}

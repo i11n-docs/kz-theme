@@ -1,0 +1,17 @@
+{{ set max = capacity || 5 }}
+{{ set data = Array.isArray(relation) ? relation : relation ? [relation] : [] }}
+{{ set related = data.slice(0, max) }}
+{{ if related.length }}
+  <li>
+    <details open>
+      <summary>{{ label }}</summary>
+      <ul>
+        {{ for i,item of related }}
+          {{ if i < max }}
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {{ /if }}
+        {{ /for }}
+      </ul>
+    </details>
+  </li>
+{{ /if }}

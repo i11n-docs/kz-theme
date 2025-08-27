@@ -1,0 +1,23 @@
+---
+layout: layouts/base.vto
+---
+<div class="flex">
+  <aside class="drawer drawer-end md:drawer-open">
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content py-0 px-2">
+      <div>
+        <main class="prose max-w-full">
+          <h1>{{title}}</h1>
+          {{ content }}
+        </main>
+      </div>
+    </div>
+    <div class="drawer-side h-auto">
+      <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu bg-base-200 text-base-content w-80 p-4">
+        <li class="menu-title">Related content</li>
+        {{ include "includes/relations.vto"}}
+      </ul>
+    </div>
+  </aside>
+</div>
