@@ -29,7 +29,7 @@ export default function (options: Partial<Options> = {}) {
     ];
 
     for (const file of files) {
-      site.remoteFile(file, import.meta.resolve(`./theme/${file}`));
+      site.remoteFile(file, import.meta.resolve(`./src/${file}`));
     }
   };
 }
