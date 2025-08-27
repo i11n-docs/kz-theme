@@ -8,7 +8,9 @@
       <ul>
         {{ for i,item of related }}
           {{ if i < max }}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            <li>
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
           {{ /if }}
         {{ /for }}
       </ul>

@@ -1,4 +1,5 @@
 import tailwindcss from "lume/plugins/tailwindcss.ts";
+// import brotli from "lume/plugins/brotli.ts";
 import relations from "lume/plugins/relations.ts";
 import date from "lume/plugins/date.ts";
 import prism from "lume/plugins/prism.ts";
@@ -49,37 +50,37 @@ export default function (userOptions?: Options) {
           showImages: false,
         },
         indexing: {
-          rootSelector: 'main',
-        }
+          rootSelector: "main",
+        },
       }))
       .use(relations({
         foreignKeys: {
           category: {
-            foreignKey: 'category_id',
-            relationKey: 'category',
-            pluralRelationKey: 'categories'
+            foreignKey: "category_id",
+            relationKey: "category",
+            pluralRelationKey: "categories",
           },
           tutorial: {
-            foreignKey: 'tutorial_id',
-            relationKey: 'tutorial',
-            pluralRelationKey: 'tutorials'
+            foreignKey: "tutorial_id",
+            relationKey: "tutorial",
+            pluralRelationKey: "tutorials",
           },
           howto: {
-            foreignKey: 'howto_id',
-            relationKey: 'howto',
-            pluralRelationKey: 'howtos'
+            foreignKey: "howto_id",
+            relationKey: "howto",
+            pluralRelationKey: "howtos",
           },
           explanation: {
-            foreignKey: 'explanation_id',
-            relationKey: 'explanation',
-            pluralRelationKey: 'explanations'
+            foreignKey: "explanation_id",
+            relationKey: "explanation",
+            pluralRelationKey: "explanations",
           },
           author: {
-            foreignKey: 'author_id',
-            relationKey: 'author',
-            pluralRelationKey: 'authors'
+            foreignKey: "author_id",
+            relationKey: "author",
+            pluralRelationKey: "authors",
           },
-        }
+        },
       }))
       .use(slugifyUrls())
       .use(sitemap(options.sitemap))
@@ -90,11 +91,11 @@ export default function (userOptions?: Options) {
           {
             name: "tomorrow",
             cssFile: "style.css",
-            placeholder: "/* dark-theme-here */"
+            placeholder: "/* dark-theme-here */",
           },
-        ]
+        ],
       }))
       .add("uploads")
       .add("style.css");
-    };
-  }
+  };
+}

@@ -72,18 +72,18 @@ date: Git Last Modified
           <label for="app-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
           <ul class="menu bg-base-200 min-h-dvh w-80 p-4 sidebar-menu">          
             <li class="flex gap-4 px-4 py-2">
-              <div>
+              <a href="/">
                 <img
                   class="h-8"
                   src="https://docs.i11n.io/assets/img/logos/png/128/projects/kz/logo/stroked.v1.png"
                   alt="kz" 
                 />
-                <a class="text-xl">
+                <span class="text-xl">
                   <span class="text-primary">kod</span><span class="text-secondary">zutsumi</span>
-                </a>
-              </div>
+                </span>
+              </a>
             </li>
-            {{ include "includes/sidebar.vto" { pages: nav.menu("/", "menu!=false").children, parts: url.split('/').slice(1) } }}
+            {{ include "partials/sidebar.vto" { pages: nav.menu("/", "menu!=false").children, parts: url.split('/').slice(1) } }}
           </ul>
         </div>
       </div>

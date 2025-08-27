@@ -33,11 +33,13 @@ layout: layouts/base.vto
       <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 text-base-content w-80 p-4">
         <li class="menu-title">Related content</li>
-        {{ include "includes/relations.vto"}}
+        {{ include "partials/relations.vto"}}
         {{ if date }}
           <li class="menu-title">Updated</li>
           <li class="menu-title text-base-content"><small>{{ date |> date('DATETIME') }}</small></li>
         {{ /if }}
+        <li class="menu-title">Documentation issue</li>
+        <li><a href="{{ bugurl }}&page={{ url }}">Report an issue</a></li>
       </ul>
     </div>
   </aside>

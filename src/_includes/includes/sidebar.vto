@@ -1,9 +1,8 @@
 
 {{ set current = parts.shift() }}
-{{# {{current}} - {{url}} #}}
 {{ for page of pages }}
   <li>
-    {{# TODO: Add Icon based on page.data.type #}}
+  {{# TODO Change icon partial to component #}}
     {{if !page.children }}
       <a href="{{ page.data.url }}"{{if page.data.url === url}} aria-current{{ /if }}>
         {{ include "includes/sidebar-icon.vto" { data: page.data} }}
