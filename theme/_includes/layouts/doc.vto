@@ -36,7 +36,7 @@ layout: layouts/base.vto
         {{ include "includes/relations.vto"}}
         {{ if date }}
           <li class="menu-title">Updated</li>
-          <li class="menu-title text-base-content"><small>{{ date |> date('DATETIME') }}</small></li>
+          <li class="menu-title text-base-content"><small>{{ date |> date('HUMAN_DATETIME') }}</small></li>
         {{ /if }}
         <li class="menu-title">Documentation issue</li>
         <li><a href="{{ bugurl }}&page={{ url }}">Report an issue</a></li>
