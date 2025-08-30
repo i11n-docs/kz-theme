@@ -80,6 +80,11 @@ export default function (userOptions?: Options) {
             relationKey: "author",
             pluralRelationKey: "authors",
           },
+          addendum: {
+            foreignKey: "addendum_id",
+            relationKey: "addendum",
+            pluralRelationKey: "addendums",
+          },
         },
       }))
       .use(slugifyUrls())

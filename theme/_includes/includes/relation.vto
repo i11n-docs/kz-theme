@@ -1,4 +1,4 @@
-{{ set max = capacity || 5 }}
+{{ set max = capacity || 10 }}
 {{ set data = Array.isArray(relation) ? relation : relation ? [relation] : [] }}
 {{ set related = data.slice(0, max) }}
 {{ if related.length }}

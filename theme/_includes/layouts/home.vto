@@ -26,7 +26,7 @@ date: Git Last Modified
                 </label>  
               </div>  
               <a class="flex-1 text-xl lg:hidden">
-                <span class="text-primary">kod</span><span class="text-secondary">zutsumi</span>
+                <span class="text-primary">{{ name.start }}</span><span class="text-secondary">{{ name.end }}</span>
               </a>            
               <div class="flex-1">
                 <label class="float-right btn btn-ghost" for="search_modal">
@@ -70,11 +70,11 @@ date: Git Last Modified
               <a href="/">
                 <img
                   class="h-8"
-                  src="https://docs.i11n.io/assets/img/logos/png/128/projects/kz/logo/stroked.v1.png"
-                  alt="kz" 
+                  src="{{ logo }}"
+                  alt="logo" 
                 />
                 <span class="text-xl">
-                  <span class="text-primary">kod</span><span class="text-secondary">zutsumi</span>
+                  <span class="text-primary">{{ name.start }}</span><span class="text-secondary">{{ name.end }}</span>
                 </span>
               </a>
             </li>
